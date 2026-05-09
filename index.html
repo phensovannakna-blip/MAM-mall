@@ -11,7 +11,75 @@
 
 </head>
 <body>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(green, #00cc00);
+}
 
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: darkgreen;
+  color: gold;
+  font-weight: bold;
+}
+
+/* BANNER */
+.banner {
+  background: linear-gradient(90deg, green, #00ff66);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.banner button {
+  background: gold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* LOAN BOX */
+.loan-box {
+  background: white;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.loan-box input {
+  width: 100%;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* MENU */
+.menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: darkgreen;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: gold;
+  text-align: center;
+}
+
+.menu div {
+  font-size: 14px;
+}
 <!-- HEADER -->
 <div class="header">
   <div><i class="fa fa-bell"></i> ALERT</div>
