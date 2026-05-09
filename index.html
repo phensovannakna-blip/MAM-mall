@@ -1,7 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAM Mall</title>
+
 <style>
 :root{
-  --primary:#0d6efd;
-  --primary-dark:#0b5ed7;
+  --primary:#d6ef6d;
+  --primary-dark:#b5e67d;
   --dark:#0f172a;
 }
 
@@ -33,42 +40,32 @@ header{
   gap:20px;
 }
 
-/* Card */
 .product{
-  background:#1e293b;
+  background:#111827;
   padding:20px;
   border-radius:15px;
   text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
   transition:0.3s;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 .product:hover{
-  transform:translateY(-8px);
+  transform:translateY(-5px);
 }
 
-/* Image */
 .product img{
   width:100%;
   border-radius:10px;
   margin-bottom:10px;
 }
 
-/* Button */
 button{
   background:var(--primary);
   border:none;
-  padding:12px;
-  width:100%;
-  border-radius:10px;
-  color:#fff;
-  font-weight:bold;
+  padding:10px 15px;
   cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  background:var(--primary-dark);
+  font-weight:bold;
+  border-radius:10px;
 }
 
 /* Cart */
@@ -78,52 +75,44 @@ button:hover{
   right:20px;
   background:#111827;
   padding:10px 15px;
-  border-radius:50px;
-  display:flex;
-  gap:8px;
-  align-items:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-#cart-count{
-  background:var(--primary);
-  padding:5px 10px;
-  border-radius:50%;
+  border-radius:20px;
 }
 
 /* Mobile */
-@media (max-width:768px){
-  header{
-    font-size:22px;
-  }
+@media(max-width:768px){
+  header{font-size:22px;}
+  button{width:100%;}
 }
 </style>
 </head>
+
 <body>
 
 <header>MAM Mall</header>
 
 <div class="cart">
-  Cart: <span id="cart-count">0</span>
+Cart: <span id="cart-count">0</span>
 </div>
 
 <section class="products">
 
-  <div class="product">
-    <img src="https://via.placeholder.com/300">
-    <h3>Product 1</h3>
-    <p>$10</p>
-    <button onclick="addToCart('Product 1', 10)">Buy</button>
-  </div>
+<div class="product">
+<img src="https://via.placeholder.com/300">
+<h3>Product 1</h3>
+<p>$10</p>
+<button onclick="addToCart(10)">Buy</button>
+</div>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/300">
-    <h3>Product 2</h3>
-    <p>$20</p>
-    <button onclick="addToCart('Product 2', 20)">Buy</button>
-  </div>
+<div class="product">
+<img src="https://via.placeholder.com/300">
+<h3>Product 2</h3>
+<p>$20</p>
+<button onclick="addToCart(20)">Buy</button>
+</div>
 
 </section>
+
+<br><br>
 
 <button onclick="order()">Place Order</button>
 
@@ -131,14 +120,14 @@ button:hover{
 let cart = 0;
 let total = 0;
 
-function addToCart(name, price){
+function addToCart(price){
   cart++;
   total += price;
   document.getElementById("cart-count").innerText = cart;
 }
 
 function order(){
-  alert("Order placed!");
+  alert("Order placed! Total: $" + total);
 }
 </script>
 
